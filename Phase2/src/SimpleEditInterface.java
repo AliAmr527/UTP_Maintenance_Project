@@ -441,7 +441,44 @@ public class SimpleEditInterface implements IsSerializable, GwtRpcResponse {
 		public boolean isNoCycle() { return Flag.NO_CYCLE.has(iFlags); }
 		public boolean isNoDetail() { return Flag.NO_DETAIL.has(iFlags); }
 		public boolean isNoList() { return Flag.NO_LIST.has(iFlags); }
+
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		public boolean isNotUnique(){
+			if(Flag.UNIQUE.has(iFlags)){
+				return false;
+			}
+			else{
+				return true;
+				}
+			}
+
+		public boolean isVacant(){
+			if(Flag.NOT_EMPTY.has(iFlags)){
+				return false;
+				}
+			else{
+				return true;
+				}
+		}
+		public boolean isActive(){
+			if(Flag.LAZY.has(iFlags)){
+				return false;
+				}
+			else{
+				return true;
+			}
+		}
+
 		public int hashCode() {
 			return getName().hashCode();
 		}
